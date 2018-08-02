@@ -1,24 +1,37 @@
+
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<title>Vue for Tweets</title>
+		<title></title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link rel="stylesheet" href="dist/css/main.css">
-		
+		<link rel="stylesheet" href="dist/css/app.css">
 	</head>
 	<body>
-		
+
 		<div id="app">
-			{{message}}
-			<gravatar v-for='person in people' v-bind:email='person'></gravatar>
+			<router-view @hashtag="hashtagChange" :countdown="countdown" :hashtag="hashtag" :tweets="tweets"></router-view>
+			<div class="tweetfeed">
+				<input placeholder="#cats" name="tweetField">
+			</div>
+			<p>
+				"Showing 0 tweet"<span>s</span>" containing "#cats""
+			</p>
 		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js"></script>
 		<script src="https://unpkg.com/vue/dist/vue.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.10.0/js/md5.min.js"></script>
+		<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+		<script src="dist/js/HomeComponent.js"></script>
+		<script src="dist/js/TweetFeedComponent.js"></script>
+		<script src="dist/js/HashtagFormComponent.js"></script>
+		<script src="dist/js/ClockComponent.js"></script>
+		<script src="dist/js/AboutComponent.js"></script>
+
 		<script src="dist/js/gravatar-component.js"></script>
 		<script src="dist/js/main.js"></script>
 
