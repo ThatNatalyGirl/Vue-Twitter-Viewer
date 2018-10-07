@@ -28,21 +28,11 @@
 // //# sourceMappingURL=HashtagFormComponent.js.map
 
 Vue.component('hashtag-form', {
-  data: function () {
+  data: function data() {
     return {
       count: 0
-    }
+    };
   },
   template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-})
-
-
-
-
-
-
-
-
-
-
-
+});
+//# sourceMappingURL=HashtagFormComponent.js.map
